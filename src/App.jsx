@@ -7,7 +7,17 @@ function App(){
 			if(event.deltaY<=0 && count>=0){
 				count-=0.8;
 				body.style.backdropFilter=`blur(${count}px)`;
-			}else{
+			}else if(count<=20){
+				count+=0.8;
+				body.style.backdropFilter=`blur(${count}px)`;
+			}
+		}
+		body.onscroll=(event)=>{
+			
+			if(event.deltaY<=0 && count>=0){
+				count-=0.8;
+				body.style.backdropFilter=`blur(${count}px)`;
+			}else if(count<=20){
 				count+=0.8;
 				body.style.backdropFilter=`blur(${count}px)`;
 			}
@@ -17,15 +27,15 @@ function App(){
 			body.ontouchstart=()=>{
 				startY=event.touches[0].clientY;
 			}
+			
 			body.ontouchend=()=>{
 				endY=event.touches[0].clientY
 				deltaY=endY-startY;
 			}
-			console.log("+++++++++++",deltaY)
 			if(deltaY<=0 && count>=0){
 				count-=0.8;
 				body.style.backdropFilter=`blur(${count}px)`;
-			}else{
+			}else if(count<=20){
 				count+=0.8;
 				body.style.backdropFilter=`blur(${count}px)`;
 			}

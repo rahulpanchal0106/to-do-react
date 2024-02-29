@@ -1,5 +1,22 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 :root{
   color: white;
+}
+.task-bgColor{
+  background-color: rgba(79, 90, 155, 0.719);
+  backdrop-filter: blur(10px);
+}
+*::-webkit-scrollbar{
+  background-color: rgba(139, 139, 139, 0.679);
+  width: 5px;
+  border-radius:10px;
+}
+*::-webkit-scrollbar-thumb{
+  background-color: rgb(254, 254, 254);
+  border-radius:10px;
 }
 
 body{
@@ -42,7 +59,7 @@ body{
 #input_container > input{
   background-color: rgba(0, 0, 0, 0.672);
   width: 85%;
-  height: 35px;
+  height: 60px;
   padding: 10px 15px;
   text-align: left;
   color: rgb(185, 185, 185);
@@ -51,12 +68,23 @@ body{
   margin: 0px 15px;
   transition: all 0.6s ease;
 }
+/* .gocheckcirclefill{
+  z-index: 0;
+}
+.gocircle{
+  z-index: 0;
+}
+#tick{
+  z-index: 10;
+} */
 #input_container > button{
-  background-color: rgba(159, 203, 203, 0.464);
+  background-color: rgb(81 124 172 / 73%);
+  backdrop-filter: blur(10px);
   color: white;
   border: 1px solid grey;
-  width: 15%;
-  height: 40px;
+  width: 25%;
+  height:fit-content;
+  padding: 20px 0px;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
   cursor:crosshair;
@@ -71,10 +99,15 @@ body{
   font-size: 1.2rem;
   cursor: pointer;
 }
-#buttons > button:hover{
-  color: white;
+#delete:hover{
+  color: red;
   font-size: 1.4rem;
 }
+#up:hover, #down:hover{
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+}
+
 #input_container>button:hover{
   border: 5px solid rgb(255, 255, 255);
   background-blend-mode: color-dodge;
@@ -83,4 +116,12 @@ body{
 #input_container > input:focus-visible{
   outline: none;
   border: 10px rgb(44, 44, 44) solid;
+}
+
+
+@media screen and (max-width:902px) {
+  #task{
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

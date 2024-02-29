@@ -1,4 +1,8 @@
-#task{
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/base';
+
+/* #task{
     background-color: rgba(79, 91, 155, 0.62);
     backdrop-filter: blur(9px);
     border: 1px solid grey ;
@@ -13,6 +17,9 @@
     align-items: center;
     justify-content: space-between;
  
+} */
+#task{
+    z-index: 10;
 }
 #text{
     height: auto;

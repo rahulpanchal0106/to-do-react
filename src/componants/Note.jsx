@@ -13,8 +13,8 @@ function Note(props){
     
     return (
         <>
-            <div id="task" key={props.key}>
-                <div id="text">
+            <div id="task" className='p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4'  key={props.key}>
+                <div id="text" className='text-xl font-medium text-black'>
                     {props.taskValue} 
                 </div>
                 <div id="buttons">
